@@ -117,6 +117,7 @@ section.gallery {
 
 @media (max-width: 768px) {
   section.gallery {
+    
     padding: 0;
   }
 
