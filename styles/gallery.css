@@ -114,3 +114,37 @@ section.gallery {
     transform: translateY(100%);
   }
 }
+
+@media (max-width: 768px) {
+  section.gallery {
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding: .25rem;
+  }
+  
+  section.gallery header span {
+    font-size: .75rem;
+  }
+
+  section.gallery .content {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+    section.gallery figure {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+   section.gallery figure > img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
