@@ -107,6 +107,7 @@ section.hero {
     }
 
     & img[src*="patins"] {
+      max-width: 95%;
       z-index: 1;
 
       transform: translateX(200%);
@@ -114,17 +115,20 @@ section.hero {
     }
 
     & img[src*="stars-1"] {
-      max-width: 5.5rem;
+      max-width: 15%;
       top: 30%;
       z-index: 0;
 
+      position: relative;
+      right: -10px;
+
       opacity: 0;
-      transform: translateX(400%);
+      transform: translateX(450%);
       animation: slidein 2s 800ms ease both, appear 100ms 800ms both;
     }
 
     & img[src*="stars-2"] {
-      max-width: 2.5rem;
+      max-width: 8%;
       right: 0;
       bottom: 35%;
 
@@ -206,5 +210,121 @@ section.hero {
 
   100% {
     transform: translateY(-15rem);
+  }
+}
+
+@media (max-width: 768px) {
+  section.hero {
+    display: flex;
+    flex-direction: column-reverse;
+     justify-content: flex-start; 
+    gap: 2rem;
+    padding-bottom: 0; 
+  }
+
+  section.hero h1 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  
+  section.hero h1 div {
+    height: 2rem;
+    
+  }
+
+  section.hero .buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 17.75rem;
+  }
+
+  section.hero h1 span {
+    display: block;
+
+    animation: slideup-mobile 5s 2s infinite ease;
+  }
+
+   section.hero > div:nth-child(2) {
+    width: 100%;
+    max-width: 25rem;
+    height: 25rem;
+  }
+
+  section.hero img[src*="stars-1"] {
+    max-width: 3rem; /* O tamanho original era 5.5rem */
+    top: 20%;        /* Ajuste a posição, se necessário */
+  }
+
+  /* Estrela 2 */
+  section.hero img[src*="stars-2"] {
+    max-width: 1.5rem; /* O tamanho original era 2.5rem */
+    bottom: 25%;     /* Ajuste a posição, se necessário */
+  }
+
+}
+
+@keyframes slideup-mobile {
+  0%, 22% {
+    transform: translateY(0);
+  }
+
+  23% {
+    transform: translateY(calc(-2rem - 6px));
+  }
+  25% {
+    transform: translateY(calc(-2rem + 4px));
+  }
+  27% {
+    transform: translateY(calc(-2rem - 2px));
+  }
+  29% {
+    transform: translateY(calc(-2rem + 2px));
+  }
+
+  33%, 55% {
+    transform: translateY(-2rem);
+  }
+
+  56% {
+    transform: translateY(calc(-4rem - 6px));
+  }
+  58% {
+    transform: translateY(calc(-4rem + 4px));
+  }
+  60% {
+    transform: translateY(calc(-4rem - 2px));
+  }
+  62% {
+    transform: translateY(calc(-4rem + 2px));
+  }
+
+  66%, 88% {
+    transform: translateY(-4rem);
+  }
+
+  89% {
+    transform: translateY(calc(-6rem - 6px));
+  }
+  91% {
+    transform: translateY(calc(-6rem + 4px));
+  }
+  93% {
+    transform: translateY(calc(-6rem - 2px));
+  }
+  95% {
+    transform: translateY(calc(-6rem + 2px));
+  }
+
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+
+@keyframes slidein-mobile {
+  50% {
+    transform: translateY(1rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
